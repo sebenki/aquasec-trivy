@@ -1,0 +1,391 @@
+﻿kind: Pod
+apiVersion: v1
+metadata:
+  generateName: trivy-
+  annotations:
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "",
+          "interface": "eth0",
+          "ips": [
+              "10.130.2.255"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "",
+          "interface": "eth0",
+          "ips": [
+              "10.130.2.255"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    openshift.io/scc: restricted
+  selfLink: /api/v1/namespaces/stephanie-sandbox/pods/trivy-0
+  resourceVersion: '177098877'
+  name: trivy-0
+  uid: ab80de5e-68bf-426d-9828-0930cb8427f3
+  creationTimestamp: '2020-12-23T22:15:29Z'
+  managedFields:
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2020-12-23T22:15:29Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:generateName': {}
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:controller-revision-hash': {}
+            'f:statefulset.kubernetes.io/pod-name': {}
+          'f:ownerReferences':
+            .: {}
+            'k:{"uid":"fddd20dd-846c-4d61-9f37-5fa64f885d60"}':
+              .: {}
+              'f:apiVersion': {}
+              'f:blockOwnerDeletion': {}
+              'f:controller': {}
+              'f:kind': {}
+              'f:name': {}
+              'f:uid': {}
+        'f:spec':
+          'f:volumes':
+            .: {}
+            'k:{"name":"data"}':
+              .: {}
+              'f:name': {}
+              'f:persistentVolumeClaim':
+                .: {}
+                'f:claimName': {}
+            'k:{"name":"tmp-data"}':
+              .: {}
+              'f:emptyDir': {}
+              'f:name': {}
+          'f:containers':
+            'k:{"name":"main"}':
+              'f:image': {}
+              'f:volumeMounts':
+                .: {}
+                'k:{"mountPath":"/home/scanner/.cache"}':
+                  .: {}
+                  'f:mountPath': {}
+                  'f:name': {}
+                'k:{"mountPath":"/tmp"}':
+                  .: {}
+                  'f:mountPath': {}
+                  'f:name': {}
+              'f:terminationMessagePolicy': {}
+              .: {}
+              'f:resources':
+                .: {}
+                'f:limits':
+                  .: {}
+                  'f:cpu': {}
+                  'f:memory': {}
+                'f:requests':
+                  .: {}
+                  'f:cpu': {}
+                  'f:memory': {}
+              'f:args': {}
+              'f:livenessProbe':
+                .: {}
+                'f:failureThreshold': {}
+                'f:httpGet':
+                  .: {}
+                  'f:path': {}
+                  'f:port': {}
+                  'f:scheme': {}
+                'f:initialDelaySeconds': {}
+                'f:periodSeconds': {}
+                'f:successThreshold': {}
+                'f:timeoutSeconds': {}
+              'f:env':
+                'k:{"name":"HTTPS_PROXY"}':
+                  .: {}
+                  'f:name': {}
+                .: {}
+                'k:{"name":"TRIVY_CACHE_DIR"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+                'k:{"name":"TRIVY_INSECURE"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+                'k:{"name":"TRIVY_GITHUB_TOKEN"}':
+                  .: {}
+                  'f:name': {}
+                  'f:valueFrom':
+                    .: {}
+                    'f:secretKeyRef':
+                      .: {}
+                      'f:key': {}
+                      'f:name': {}
+                'k:{"name":"NO_PROXY"}':
+                  .: {}
+                  'f:name': {}
+                'k:{"name":"TRIVY_DEBUG"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+                'k:{"name":"HTTP_PROXY"}':
+                  .: {}
+                  'f:name': {}
+                'k:{"name":"TRIVY_LISTEN"}':
+                  .: {}
+                  'f:name': {}
+                  'f:value': {}
+              'f:readinessProbe':
+                .: {}
+                'f:failureThreshold': {}
+                'f:httpGet':
+                  .: {}
+                  'f:path': {}
+                  'f:port': {}
+                  'f:scheme': {}
+                'f:initialDelaySeconds': {}
+                'f:periodSeconds': {}
+                'f:successThreshold': {}
+                'f:timeoutSeconds': {}
+              'f:securityContext':
+                .: {}
+                'f:privileged': {}
+                'f:readOnlyRootFilesystem': {}
+              'f:terminationMessagePath': {}
+              'f:imagePullPolicy': {}
+              'f:ports':
+                .: {}
+                'k:{"containerPort":4954,"protocol":"TCP"}':
+                  .: {}
+                  'f:containerPort': {}
+                  'f:name': {}
+                  'f:protocol': {}
+              'f:name': {}
+          'f:hostname': {}
+          'f:dnsPolicy': {}
+          'f:automountServiceAccountToken': {}
+          'f:serviceAccount': {}
+          'f:restartPolicy': {}
+          'f:subdomain': {}
+          'f:schedulerName': {}
+          'f:terminationGracePeriodSeconds': {}
+          'f:serviceAccountName': {}
+          'f:enableServiceLinks': {}
+          'f:securityContext':
+            .: {}
+            'f:fsGroup': {}
+            'f:runAsNonRoot': {}
+            'f:runAsUser': {}
+    - manager: multus
+      operation: Update
+      apiVersion: v1
+      time: '2020-12-23T22:15:48Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:k8s.v1.cni.cncf.io/network-status': {}
+            'f:k8s.v1.cni.cncf.io/networks-status': {}
+    - manager: kubelet
+      operation: Update
+      apiVersion: v1
+      time: '2020-12-23T22:16:02Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:conditions':
+            'k:{"type":"ContainersReady"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Initialized"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Ready"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+          'f:containerStatuses': {}
+          'f:hostIP': {}
+          'f:phase': {}
+          'f:podIP': {}
+          'f:podIPs':
+            .: {}
+            'k:{"ip":"10.130.2.255"}':
+              .: {}
+              'f:ip': {}
+          'f:startTime': {}
+  namespace: stephanie-sandbox
+  ownerReferences:
+    - apiVersion: apps/v1
+      kind: StatefulSet
+      name: trivy
+      uid: fddd20dd-846c-4d61-9f37-5fa64f885d60
+      controller: true
+      blockOwnerDeletion: true
+  labels:
+    app.kubernetes.io/instance: trivy
+    app.kubernetes.io/name: trivy
+    controller-revision-hash: trivy-67ff7cc4bd
+    statefulset.kubernetes.io/pod-name: trivy-0
+spec:
+  restartPolicy: Always
+  serviceAccountName: trivy
+  imagePullSecrets:
+    - name: trivy-dockercfg-wddkd
+  priority: 0
+  subdomain: trivy
+  schedulerName: default-scheduler
+  enableServiceLinks: true
+  terminationGracePeriodSeconds: 30
+  preemptionPolicy: PreemptLowerPriority
+  nodeName: ip-10-0-165-34.ec2.internal
+  securityContext:
+    seLinuxOptions:
+      level: 's0:c28,c7'
+    runAsUser: 1000770000
+    runAsNonRoot: true
+    fsGroup: 1000770000
+  containers:
+    - resources:
+        limits:
+          cpu: '1'
+          memory: 1Gi
+        requests:
+          cpu: 200m
+          memory: 512Mi
+      readinessProbe:
+        httpGet:
+          path: /healthz
+          port: trivy-http
+          scheme: HTTP
+        initialDelaySeconds: 5
+        timeoutSeconds: 1
+        periodSeconds: 10
+        successThreshold: 1
+        failureThreshold: 3
+      terminationMessagePath: /dev/termination-log
+      name: main
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: trivy-http
+          scheme: HTTP
+        initialDelaySeconds: 5
+        timeoutSeconds: 1
+        periodSeconds: 10
+        successThreshold: 1
+        failureThreshold: 10
+      env:
+        - name: TRIVY_LISTEN
+          value: '0.0.0.0:4954'
+        - name: TRIVY_CACHE_DIR
+          value: /home/scanner/.cache/trivy
+        - name: TRIVY_DEBUG
+          value: 'false'
+        - name: TRIVY_GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: trivy
+              key: gitHubToken
+        - name: HTTP_PROXY
+        - name: HTTPS_PROXY
+        - name: NO_PROXY
+        - name: TRIVY_INSECURE
+          value: 'true'
+      securityContext:
+        capabilities:
+          drop:
+            - KILL
+            - MKNOD
+            - SETGID
+            - SETUID
+        privileged: false
+        readOnlyRootFilesystem: true
+      ports:
+        - name: trivy-http
+          containerPort: 4954
+          protocol: TCP
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - name: tmp-data
+          mountPath: /tmp
+        - name: data
+          mountPath: /home/scanner/.cache
+      terminationMessagePolicy: File
+      image: 'docker.io/aquasec/trivy:0.14.0'
+      args:
+        - server
+  hostname: trivy-0
+  automountServiceAccountToken: false
+  serviceAccount: trivy
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: data-trivy-0
+    - name: tmp-data
+      emptyDir: {}
+  dnsPolicy: ClusterFirst
+  tolerations:
+    - key: node.kubernetes.io/not-ready
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/unreachable
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/memory-pressure
+      operator: Exists
+      effect: NoSchedule
+status:
+  phase: Running
+  conditions:
+    - type: Initialized
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2020-12-23T22:15:29Z'
+    - type: Ready
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2020-12-23T22:16:02Z'
+    - type: ContainersReady
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2020-12-23T22:16:02Z'
+    - type: PodScheduled
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2020-12-23T22:15:29Z'
+  hostIP: 10.0.165.34
+  podIP: 10.130.2.255
+  podIPs:
+    - ip: 10.130.2.255
+  startTime: '2020-12-23T22:15:29Z'
+  containerStatuses:
+    - restartCount: 0
+      started: true
+      ready: true
+      name: main
+      state:
+        running:
+          startedAt: '2020-12-23T22:15:48Z'
+      imageID: >-
+        docker.io/aquasec/trivy@sha256:022f178f7df525c6e5eb4af51840af6f9e8e3fdbdcb2476c879f3774963b145a
+      image: 'docker.io/aquasec/trivy:0.14.0'
+      lastState: {}
+      containerID: 'cri-o://cb75420a48e070af4c3db642b8c3425e93fa3f2333bc1ada6fcac114ebb48608'
+  qosClass: Burstable
