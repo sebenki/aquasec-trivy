@@ -1,0 +1,45 @@
+
+#########################################################
+## Create IdM Service Accounts                          #
+#########################################################
+
+- name: Create LDAP Service User
+  command:
+    argv:
+      - ipa
+      - user-add
+      - service-ldap
+      - --displayname=LDAP
+      - --first=Service
+      - --last=LDAP
+      - --password-expiration={{ password_expiration_date }}
+      - --user-auth-type=password
+	  - --maxlife=365
+
+- name: Create Jenkins Service Account
+  command:
+    argv:
+      - ipa
+      - user-add
+      - service-jenkins
+      - --displayname=Jenkins
+      - --first=Service
+      - --last=Jenkins
+      - --password-expiration={{ password_expiration_date }}
+      - --user-auth-type=password
+      - --homedir=/home/service-jenkins
+	  - --maxlife=365
+
+- name: Create Gitlab Service Account
+  command:
+    argv:
+      - ipa
+      - user-add
+      - service-gitlab
+      - --displayname=Gitlab
+      - --first=Service
+      - --last=Gitlab
+      - --password-expiration={{ password_expiration_date }}
+      - --user-auth-type=password
+      - --homedir=/home/service-gitlab
+	  - --maxlife=365
